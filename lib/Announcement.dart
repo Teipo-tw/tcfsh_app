@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:'
 
-class announcement extends StatelessWidget{
+
+class Announcement extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("New route"),
+        
       ),
       body: Center(
         child: new Column(
@@ -16,8 +16,7 @@ class announcement extends StatelessWidget{
             MaterialButton(
               color:Colors.yellow[300],
               onPressed: () async {
-              //输出`TipRoute`路由返回结果
-                print("路由返回值: $result");
+
               },
               child: Text("打开提示页"),
             ),
