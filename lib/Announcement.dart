@@ -1,28 +1,22 @@
 import 'package:flutter/material.dart';
+//test
 
-
-class Announcement extends StatelessWidget{
+class Announcement extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        
-      ),
+      appBar: AppBar(),
       body: Center(
-        child: new Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[ 
+          child: new Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
             Text("This is new route"),
             MaterialButton(
-              color:Colors.yellow[300],
-              onPressed: () async {
-
-              },
+              color: Colors.yellow[300],
+              onPressed: () async {},
               child: Text("打开提示页"),
             ),
-          ]
-        )
-      ),
+          ])),
     );
   }
 }
