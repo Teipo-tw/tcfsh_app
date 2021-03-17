@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tcfsh_app/main_page.dart';
 import 'package:tcfsh_app/page_announcement.dart';
 
 void main() {
@@ -38,259 +39,60 @@ class _MyHomePageState extends State<MyHomePage> {
       _counter++;
     });
   }
-
-
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
-    return Scaffold(
-      /*appBar: AppBar(
-        title: Text(widget.title),
-      ),*/
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-           mainAxisSize: MainAxisSize.min,
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children:[
-            Column(
-                mainAxisSize: MainAxisSize.min,
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children:[
-                    Container(
-                        width: 320,
-                        height: 60,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.only(topLeft: Radius.circular(25), topRight: Radius.circular(25), bottomLeft: Radius.circular(0), bottomRight: Radius.circular(0), ),
-                            color: Color(0xff84d5fa),
-                        ),
-                        child: Row(
-                            mainAxisSize: MainAxisSize.min,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children:[
-                                Text(
-                                    "109年12月4日",
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                        color: Colors.black,
-                                        fontSize: 34,
-                                        fontFamily: "Noto Sans CJK TC",
-                                        fontWeight: FontWeight.w700,
-                                    ),
-                                ),
-                            ],
-                        ),
-                    ),
-                    SizedBox(height: 5),
-                    Container(
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.only(topLeft: Radius.circular(0), topRight: Radius.circular(0), bottomLeft: Radius.circular(25), bottomRight: Radius.circular(25), ),
-                            color: Color(0xffd7dfe2),
-                        ),
-                        padding: const EdgeInsets.only(left: 30, right: 10, top: 10, bottom: 20, ),
-                        child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children:[
-                                Text(
-                                    "本日事項",
-                                    style: TextStyle(
-                                        color: Colors.black,
-                                        fontSize: 24,
-                                        fontFamily: "Noto Sans CJK TC",
-                                        fontWeight: FontWeight.w700,
-                                    ),
-                                ),
-                                SizedBox(height: 5),
-                                SizedBox(
-                                    width: 280,
-                                    child: Text(
-                                        " ‧ 廁所綠、美化競賽。\n ‧ 校內國語文競賽。\n ‧ 環境教育。",
-                                        style: TextStyle(
-                                            color: Colors.black,
-                                            fontSize: 18,
-                                            fontFamily: "Noto Sans CJK TC",
-                                            fontWeight: FontWeight.w500,
-                                        ),
-                                    ),
-                                ),
-                            ],
-                        ),
-                    ),
-                ],
+    return new Scaffold(
+      appBar: new AppBar(
+        title: new Text(widget.title),
+      ),
+      body: new Center(
+        child: new Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            new Text(
+              'You have pushed the button this many times:',
             ),
-            SizedBox(height: 20),
-            Container(
-                width: 300,
-                height: 75,
-                child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children:[
-                        Container(
-                            width: 300,
-                            height: 75,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(20),
-                                color: Color(0xffd8dfe3),
-                            ),
-                            padding: const EdgeInsets.symmetric(horizontal: 85, vertical: 20, ),
-                            child: Row(
-                                mainAxisSize: MainAxisSize.min,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children:[
-                                    Text(
-                                        "􀅴 學生資訊",
-                                        style: TextStyle(
-                                            color: Colors.black,
-                                            fontSize: 24,
-                                        ),
-                                    ),
-                                ],
-                            ),
-                        ),
-                    ],
-                ),
+            new Text(
+              '$_counter',
+              style: Theme.of(context).textTheme.headline4,
             ),
-            SizedBox(height: 20),
-            Row(
-                mainAxisSize: MainAxisSize.min,
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children:[
-                    Container(
-                        width: 145,
-                        height: 90,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20),
-                            color: Color(0xffd8dfe3),
-                        ),
-                        padding: const EdgeInsets.only(left: 15, top: 10, ),
-                        child: Row(
-                            mainAxisSize: MainAxisSize.min,
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children:[
-                                Text(
-                                    "校園公告",
-                                    style: TextStyle(
-                                        color: Colors.black,
-                                        fontSize: 18,
-                                        fontFamily: "Noto Sans CJK TC",
-                                        fontWeight: FontWeight.w500,
-                                    ),
-                                ),
-                            ],
-                        ),
-                    ),
-                    SizedBox(width: 10),
-                    Container(
-                        width: 145,
-                        height: 90,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20),
-                            color: Color(0xffd8dfe3),
-                        ),
-                        padding: const EdgeInsets.only(left: 15, top: 10, ),
-                        child: Row(
-                            mainAxisSize: MainAxisSize.min,
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children:[
-                                Text(
-                                    "數位校園",
-                                    style: TextStyle(
-                                        color: Colors.black,
-                                        fontSize: 18,
-                                        fontFamily: "Noto Sans CJK TC",
-                                        fontWeight: FontWeight.w500,
-                                    ),
-                                ),
-                            ],
-                        ),
-                    ),
-                ],
+            MaterialButton(
+              color: Colors.red,
+              child: Text("主頁"),
+              textColor: Colors.blue,
+              onPressed: () {
+                //导航到新路由   
+                Navigator.push( context,
+                MaterialPageRoute(builder: (context) {
+                  return MainPage();
+                }));
+              },
             ),
-            SizedBox(height: 20),
-            Row(
-                mainAxisSize: MainAxisSize.min,
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children:[
-                    Container(
-                        width: 145,
-                        height: 90,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20),
-                            color: Color(0xffd8dfe3),
-                        ),
-                        padding: const EdgeInsets.only(left: 15, top: 10, ),
-                        child: Row(
-                            mainAxisSize: MainAxisSize.min,
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children:[
-                                Text(
-                                    "電視牆公告",
-                                    style: TextStyle(
-                                        color: Colors.black,
-                                        fontSize: 18,
-                                        fontFamily: "Noto Sans CJK TC",
-                                        fontWeight: FontWeight.w500,
-                                    ),
-                                ),
-                            ],
-                        ),
-                    ),
-                    SizedBox(width: 10),
-                    Container(
-                        width: 145,
-                        height: 90,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20),
-                            color: Color(0xffd8dfe3),
-                        ),
-                        padding: const EdgeInsets.only(left: 15, top: 10, ),
-                        child: Row(
-                            mainAxisSize: MainAxisSize.min,
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children:[
-                                Text(
-                                    "閱覽室\n選位系統",
-                                    style: TextStyle(
-                                        color: Colors.black,
-                                        fontSize: 18,
-                                        fontFamily: "Noto Sans CJK TC",
-                                        fontWeight: FontWeight.w500,
-                                    ),
-                                ),
-                            ],
-                        ),
-                    ),
-                ],
+            MaterialButton(
+              color:Colors.yellow[300],
+              onPressed: () async {
+                var result = await Navigator.push(context,
+                  MaterialPageRoute(builder: (context) {
+                    return PageAnnouncement();
+                  },),
+                );
+              //输出`TipRoute`路由返回结果
+                print("路由返回值: $result");
+              },
+              child: Text("公告頁面"),
             ),
-        ],
-
+            
+          ],
         ),
       ),
-      /*floatingActionButton: FloatingActionButton(
+      floatingActionButton: new FloatingActionButton(
         onPressed: _incrementCounter,
         tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ), */
+        child: new Icon(Icons.add),
+      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
+
+  
 }
+
