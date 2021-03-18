@@ -1,3 +1,5 @@
+/*公告頁面主頁*/
+
 import 'package:flutter/material.dart';
 
 
@@ -6,7 +8,17 @@ class PageAnnouncementMain extends StatelessWidget{
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        
+        leading: new InkWell(
+          child: Row(
+            children: <Widget>[
+              Icon(Icons.keyboard_arrow_left),
+              Text('返回'),
+            ]
+          ),
+          onTap: (){
+            Navigator.pop(context);
+          },
+        )
       ),
       body: ListView.separated(
           itemBuilder: (BuildContext context, int index){
@@ -117,7 +129,7 @@ class PageAnnouncementMain extends StatelessWidget{
                   SizedBox(
                     width: 305,
                     child: Text(
-                      "圖書館招募愛心媽媽義工～歡迎報名～",
+                      "圖書館招募愛心媽媽義工～歡迎報名～$index",
                       style: TextStyle(
                         color: Colors.black,
                         fontSize: 15,
