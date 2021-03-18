@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:tcfsh_app/page_announcement.dart';
+import 'package:tcfsh_app/page_announcement_main.dart';
 
 
 class MainPage extends StatelessWidget {

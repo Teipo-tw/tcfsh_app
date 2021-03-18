@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tcfsh_app/main_page.dart';
-import 'package:tcfsh_app/page_announcement.dart';
+import 'package:tcfsh_app/page_announcement_main.dart';
 
 void main() {
   runApp(MyApp());
@@ -73,7 +73,7 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: () async {
                 var result = await Navigator.push(context,
                   MaterialPageRoute(builder: (context) {
-                    return PageAnnouncement();
+                    return PageAnnouncementMain();
                   },),
                 );
               //输出`TipRoute`路由返回结果
