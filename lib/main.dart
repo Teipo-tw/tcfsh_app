@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tcfsh_app/bottom_navigation_controller.dart';
 import 'package:tcfsh_app/main_page.dart';
 import 'package:tcfsh_app/page_announcement_main.dart';
 
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.lightBlue,
       ),
 
       home: MyHomePage(title: 'TCFSH APP'),
@@ -73,7 +74,7 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: () async {
                 var result = await Navigator.push(context,
                   MaterialPageRoute(builder: (context) {
-                    return PageAnnouncementMain();
+                    return BottomNavigationController();
                   },),
                 );
               //输出`TipRoute`路由返回结果

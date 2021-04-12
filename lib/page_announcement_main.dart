@@ -7,15 +7,18 @@ class PageAnnouncementMain extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-            leading: new InkWell(
-          child: Row(children: <Widget>[
-            Icon(Icons.keyboard_arrow_left),
-            Text('返回'),
-          ]),
-          onTap: () {
-            Navigator.pop(context);
-          },
-        )),
+          backgroundColor: Color(0xecF2F1F6),
+          leading: new InkWell(
+            child: Row(children: <Widget>[
+              Icon(Icons.keyboard_arrow_left),
+              Text('返回'),
+            ]),
+            onTap: () {
+              Navigator.pop(context);
+            },
+          ),
+          title: Text('公告頁面'),
+        ),
         body: ListView.separated(
             itemBuilder: (BuildContext context, int index) {
               return Container(
