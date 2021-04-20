@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:tcfsh_app/bottom_navigation_controller.dart';
 import 'package:tcfsh_app/main_page.dart';
 import 'package:tcfsh_app/page_announcement_main.dart';
+import 'package:tcfsh_app/page_test.dart';
 
 void main() {
   runApp(MyApp());
@@ -16,7 +17,6 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.lightBlue,
       ),
-
       home: MyHomePage(title: 'TCFSH APP'),
     );
   }
@@ -31,7 +31,6 @@ class MyHomePage extends StatefulWidget {
   _MyHomePageState createState() => _MyHomePageState();
 }
 
-
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
 
@@ -40,6 +39,7 @@ class _MyHomePageState extends State<MyHomePage> {
       _counter++;
     });
   }
+
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
@@ -62,27 +62,28 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Text("主頁"),
               textColor: Colors.blue,
               onPressed: () {
-                //导航到新路由   
-                Navigator.push( context,
-                MaterialPageRoute(builder: (context) {
-                  return MainPage();
+                //导航到新路由
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return PageTest();
                 }));
               },
             ),
             MaterialButton(
-              color:Colors.yellow[300],
+              color: Colors.yellow[300],
               onPressed: () async {
-                var result = await Navigator.push(context,
-                  MaterialPageRoute(builder: (context) {
-                    return BottomNavigationController();
-                  },),
+                var result = await Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return BottomNavigationController();
+                    },
+                  ),
                 );
-              //输出`TipRoute`路由返回结果
+                //输出`TipRoute`路由返回结果
                 print("路由返回值: $result");
               },
               child: Text("公告頁面"),
             ),
-            
           ],
         ),
       ),
@@ -93,7 +94,4 @@ class _MyHomePageState extends State<MyHomePage> {
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
-
-  
 }
-
