@@ -23,7 +23,7 @@ class PageAnnouncementMain extends StatelessWidget {
         body: ListView.separated(
             itemBuilder: (BuildContext context, int index) {
               return MaterialButton(
-                //單一按鈕
+                //創建按鈕
                 onPressed: () {
                   Navigator.push(context, MaterialPageRoute(builder: (context) {
                     return PageTest();
