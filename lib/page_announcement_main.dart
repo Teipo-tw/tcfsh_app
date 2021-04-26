@@ -46,7 +46,7 @@ class PageAnnouncementMain extends StatelessWidget {
                   Row(
                     //日期、狀態
                     mainAxisSize: MainAxisSize.min,
-                    mainAxisAlignment: MainAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Text(
@@ -133,31 +133,17 @@ class PageAnnouncementMain extends StatelessWidget {
                 alignment: Alignment.centerLeft, child: SizedBox(height: 10));
           },
           itemCount: 20),
-      floatingActionButton: Column(
-        mainAxisAlignment: MainAxisAlignment.end,
-        children: [
-          FloatingActionButton(
-            onPressed: () {},
-            backgroundColor: Colors.white,
-            child: Icon(
-              Icons.north,
-              color: Color(0xffbae6ff),
-              size: 30,
-            ),
+      floatingActionButton: SizedBox(
+        width: 50,
+        height: 50,
+        child: FloatingActionButton(
+          onPressed: () {},
+          child: Icon(
+            Icons.north,
+            color: Color(0xffbae6ff),
+            size: 30,
           ),
-          SizedBox(
-            height: 10,
-          ),
-          FloatingActionButton(
-            onPressed: () {},
-            backgroundColor: Colors.white,
-            child: Icon(
-              Icons.search,
-              color: Color(0xffbae6ff),
-              size: 30,
-            ),
-          ),
-        ],
+        ),
       ),
     );
   }

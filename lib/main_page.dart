@@ -47,6 +47,7 @@ class MainPage extends StatelessWidget {
                 ),
                 SizedBox(height: 5),
                 Container(
+                  //事項
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.vertical(
                       top: Radius.circular(0),
