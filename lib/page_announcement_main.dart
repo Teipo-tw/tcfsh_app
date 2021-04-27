@@ -5,6 +5,7 @@ import 'package:tcfsh_app/page_test.dart';
 
 class PageAnnouncementMain extends StatelessWidget {
   @override
+  var _scrollController = ScrollController();
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -21,6 +22,7 @@ class PageAnnouncementMain extends StatelessWidget {
         title: Text('公告頁面'),
       ),
       body: ListView.separated(
+          controller: _scrollController,
           itemBuilder: (BuildContext context, int index) {
             return MaterialButton(
               //創建按鈕
@@ -137,9 +139,13 @@ class PageAnnouncementMain extends StatelessWidget {
         width: 50,
         height: 50,
         child: FloatingActionButton(
-          onPressed: () {},
+          onPressed: () {
+            _scrollController.animateTo(0.0,
+                duration: Duration(milliseconds: 500),
+                curve: Curves.decelerate);
+          },
           child: Icon(
-            Icons.north,
+            Icons.refresh,
             color: Color(0xffbae6ff),
             size: 30,
           ),
