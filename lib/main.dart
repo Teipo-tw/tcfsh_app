@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:tcfsh_app/bottom_navigation_controller.dart';
 import 'package:tcfsh_app/main_page.dart';
 import 'package:tcfsh_app/page_announcement_main.dart';
+import 'package:tcfsh_app/page_announcement.dart';
 import 'package:tcfsh_app/page_test.dart';
 
 void main() {
@@ -58,13 +59,24 @@ class _MyHomePageState extends State<MyHomePage> {
               style: Theme.of(context).textTheme.headline4,
             ),
             MaterialButton(
-              color: Colors.red,
-              child: Text("主頁"),
+              color: Colors.yellow,
+              child: Text("Test Page"),
               textColor: Colors.blue,
               onPressed: () {
                 //导航到新路由
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
                   return PageTest();
+                }));
+              },
+            ),
+            MaterialButton(
+              color: Colors.yellow[50],
+              child: Text("AnnouncementPage"),
+              textColor: Colors.blue,
+              onPressed: () {
+                //导航到新路由
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return PageAnnouncement();
                 }));
               },
             ),
