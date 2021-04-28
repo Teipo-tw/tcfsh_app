@@ -45,6 +45,10 @@ flutter:
   # the material Icons class.
   uses-material-design: true
 
+flutter_custom_calendar:
+    git:
+      url: https://github.com/LXD312569496/flutter_custom_calendar.git
+
   # To add assets to your application, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg
