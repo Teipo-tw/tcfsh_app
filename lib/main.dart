@@ -65,7 +65,7 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: () {
                 //导航到新路由
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return PageTest();
+                  return MainPage();
                 }));
               },
             ),
