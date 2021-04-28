@@ -60,7 +60,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             MaterialButton(
               color: Colors.yellow,
-              child: Text("Test Page"),
+              child: Text("主頁"),
               textColor: Colors.blue,
               onPressed: () {
                 //导航到新路由
@@ -71,7 +71,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             MaterialButton(
               color: Colors.yellow[50],
-              child: Text("AnnouncementPage"),
+              child: Text("公告子頁面"),
               textColor: Colors.blue,
               onPressed: () {
                 //导航到新路由
