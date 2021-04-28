@@ -102,13 +102,25 @@ class MainPage extends StatelessWidget {
                 color: Color(0xffd8dfe3),
               ),
               alignment: Alignment.center,
-              child: Text(
-                "􀅴 學生資訊",
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 24,
-                ),
-              ),
+              child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Icon(
+                      Icons.info_outline,
+                      color: Colors.black,
+                      size: 30,
+                    ),
+                    SizedBox(width: 5),
+                    Text(
+                      "學生資訊",
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 24,
+                      ),
+                    ),
+                  ]),
             ),
             SizedBox(height: 20),
             Row(
