@@ -23,9 +23,11 @@ class _BottomNavigationControllerState
       body: pages[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         items: <BottomNavigationBarItem>[
-          BottomNavigationBarItem(icon: Icon(Icons.announcement), label: ('校園公告')),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.announcement), label: ('校園公告')),
           BottomNavigationBarItem(icon: Icon(Icons.home), label: ('首頁')),
-          BottomNavigationBarItem(icon: Icon(Icons.account_circle), label: ('個人資料')),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.account_circle), label: ('個人資料')),
         ],
         currentIndex: _currentIndex, //目前選擇頁索引值
         fixedColor: Colors.amber, //選擇頁顏色
