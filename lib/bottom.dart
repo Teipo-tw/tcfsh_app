@@ -3,16 +3,16 @@ import 'package:tcfsh_app/main_page.dart';
 import 'package:tcfsh_app/page_announcement_main.dart';
 import 'package:tcfsh_app/page_tv_wall_main.dart';
 
-class BottomNavigationController extends StatefulWidget {
-  BottomNavigationController({Key key}) : super(key: key);
+class Bottom extends StatefulWidget {
+  Bottom({Key key}) : super(key: key);
 
   @override
-  _BottomNavigationControllerState createState() =>
-      _BottomNavigationControllerState();
+  _BottomState createState() =>
+      _BottomState();
 }
 
-class _BottomNavigationControllerState
-    extends State<BottomNavigationController> {
+class _BottomState
+    extends State<Bottom> {
   //目前選擇頁索引值
   int _currentIndex = 1; //預設值
   final pages = [PageAnnouncementMain(), MainPage(), PageTVWallMain()];

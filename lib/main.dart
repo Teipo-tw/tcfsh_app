@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tcfsh_app/bottom_navigation_controller.dart';
+import 'package:tcfsh_app/bottom.dart';
 import 'package:tcfsh_app/main_page.dart';
 import 'package:tcfsh_app/page_announcement_main.dart';
 import 'package:tcfsh_app/page_announcement.dart';
@@ -88,7 +88,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   context,
                   MaterialPageRoute(
                     builder: (context) {
-                      return BottomNavigationController();
+                      return Bottom();
                     },
                   ),
                 );
