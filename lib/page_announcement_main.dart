@@ -15,23 +15,30 @@ class PageAnnouncementMain extends StatelessWidget {
           color: Color(0xecF2F1F6),
           padding: EdgeInsets.only(top: 50),
           child: Column(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               MaterialButton(
-                child: Row(children: <Widget>[
-                  Icon(
-                    Icons.keyboard_arrow_left,
-                    size: 30,
-                  ),
-                  Text(
-                    "返回",
-                    style: TextStyle(
-                      color: Color(0xbf000000),
-                      fontSize: 18,
-                      fontFamily: "Noto Sans CJK TC",
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                ]),
+                child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: <Widget>[
+                      Icon(
+                        Icons.arrow_back_ios,
+                        size: 24,
+                      ),
+                      Text(
+                        "返回",
+                        style: TextStyle(
+                          color: Color(0xbf000000),
+                          fontSize: 18,
+                          fontFamily: "Noto Sans CJK TC",
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ]),
                 onPressed: () {
                   Navigator.pop(context);
                 },
