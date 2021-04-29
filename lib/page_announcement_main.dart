@@ -10,7 +10,7 @@ class PageAnnouncementMain extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(100),
+        preferredSize: Size.fromHeight(1000),
         child: Material(
           elevation: 5,
           child: Container(
@@ -18,6 +18,7 @@ class PageAnnouncementMain extends StatelessWidget {
             padding: EdgeInsets.only(
               top: 30,
               left: 10,
+              bottom: 10,
             ),
             child: Column(
               mainAxisSize: MainAxisSize.min,
