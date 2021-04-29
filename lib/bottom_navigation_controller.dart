@@ -14,7 +14,7 @@ class BottomNavigationController extends StatefulWidget {
 class _BottomNavigationControllerState
     extends State<BottomNavigationController> {
   //目前選擇頁索引值
-  int _currentIndex = 0; //預設值
+  int _currentIndex = 1; //預設值
   final pages = [PageAnnouncementMain(), MainPage(), PageTVWallMain()];
 
   @override
