@@ -2,16 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 
-class PageTVWall extends StatefulWidget {
-  PageTVWall({Key key, this.title}) : super(key: key);
+class PageTVWallMain extends StatefulWidget {
+  PageTVWallMain({Key key, this.title}) : super(key: key);
 
   final String title;
 
   @override
-  _PageTVWallState createState() => _PageTVWallState();
+  _PageTVWallMainState createState() => _PageTVWallMainState();
 }
 
-class _PageTVWallState extends State<PageTVWall> {
+class _PageTVWallMainState extends State<PageTVWallMain> {
   String data="321";
 
   void getData() async {

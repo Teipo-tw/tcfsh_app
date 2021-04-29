@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tcfsh_app/main_page.dart';
 import 'package:tcfsh_app/page_announcement_main.dart';
-import 'package:tcfsh_app/page_tv_wall.dart';
+import 'package:tcfsh_app/page_tv_wall_main.dart';
 
 class BottomNavigationController extends StatefulWidget {
   BottomNavigationController({Key key}) : super(key: key);
@@ -15,7 +15,7 @@ class _BottomNavigationControllerState
     extends State<BottomNavigationController> {
   //目前選擇頁索引值
   int _currentIndex = 0; //預設值
-  final pages = [PageAnnouncementMain(), MainPage(), PageTVWall()];
+  final pages = [PageAnnouncementMain(), MainPage(), PageTVWallMain()];
 
   @override
   Widget build(BuildContext context) {
