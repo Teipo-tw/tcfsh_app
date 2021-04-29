@@ -6,20 +6,48 @@ import 'package:tcfsh_app/page_test.dart';
 class PageAnnouncementMain extends StatelessWidget {
   @override
   var _scrollController = ScrollController();
+  double _height = 50;
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Color(0xecF2F1F6),
-        leading: new InkWell(
-          child: Row(children: <Widget>[
-            Icon(Icons.keyboard_arrow_left),
-            Text('返回'),
-          ]),
-          onTap: () {
-            Navigator.pop(context);
-          },
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(100),
+        child: Container(
+          color: Color(0xecF2F1F6),
+          padding: EdgeInsets.only(top: 50),
+          child: Column(
+            children: [
+              MaterialButton(
+                child: Row(children: <Widget>[
+                  Icon(
+                    Icons.keyboard_arrow_left,
+                    size: 30,
+                  ),
+                  Text(
+                    "返回",
+                    style: TextStyle(
+                      color: Color(0xbf000000),
+                      fontSize: 18,
+                      fontFamily: "Noto Sans CJK TC",
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                ]),
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+              ),
+              Text(
+                "校園公告",
+                style: TextStyle(
+                  color: Color(0xbf000000),
+                  fontSize: 34,
+                  fontFamily: "Noto Sans CJK TC",
+                  fontWeight: FontWeight.w700,
+                ),
+              ),
+            ],
+          ),
         ),
-        title: Text('公告頁面'),
       ),
       body: ListView.separated(
           controller: _scrollController,
