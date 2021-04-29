@@ -11,48 +11,54 @@ class PageAnnouncementMain extends StatelessWidget {
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(100),
-        child: Container(
-          color: Color(0xecF2F1F6),
-          padding: EdgeInsets.only(top: 50),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              MaterialButton(
-                child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: <Widget>[
-                      Icon(
-                        Icons.arrow_back_ios,
-                        size: 24,
-                      ),
-                      Text(
-                        "返回",
-                        style: TextStyle(
-                          color: Color(0xbf000000),
-                          fontSize: 18,
-                          fontFamily: "Noto Sans CJK TC",
-                          fontWeight: FontWeight.w500,
+        child: Material(
+          elevation: 5,
+          child: Container(
+            color: Color(0xecF2F1F6),
+            padding: EdgeInsets.only(
+              top: 30,
+              left: 10,
+            ),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                MaterialButton(
+                  child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: <Widget>[
+                        Icon(
+                          Icons.arrow_back_ios,
+                          size: 24,
                         ),
-                      ),
-                    ]),
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-              ),
-              Text(
-                "校園公告",
-                style: TextStyle(
-                  color: Color(0xbf000000),
-                  fontSize: 34,
-                  fontFamily: "Noto Sans CJK TC",
-                  fontWeight: FontWeight.w700,
+                        Text(
+                          "返回",
+                          style: TextStyle(
+                            color: Color(0xbf000000),
+                            fontSize: 18,
+                            fontFamily: "Noto Sans CJK TC",
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ]),
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
                 ),
-              ),
-            ],
+                Text(
+                  "   校園公告",
+                  style: TextStyle(
+                    color: Color(0xbf000000),
+                    fontSize: 34,
+                    fontFamily: "Noto Sans CJK TC",
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),
