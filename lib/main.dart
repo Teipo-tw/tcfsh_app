@@ -5,7 +5,6 @@ import 'package:tcfsh_app/page_announcement_main.dart';
 import 'package:tcfsh_app/page_announcement.dart';
 import 'package:tcfsh_app/page_test.dart';
 
-
 void main() {
   runApp(MyApp());
 }
