@@ -7,12 +7,10 @@ class Bottom extends StatefulWidget {
   Bottom({Key key}) : super(key: key);
 
   @override
-  _BottomState createState() =>
-      _BottomState();
+  _BottomState createState() => _BottomState();
 }
 
-class _BottomState
-    extends State<Bottom> {
+class _BottomState extends State<Bottom> {
   //目前選擇頁索引值
   int _currentIndex = 1; //預設值
   final pages = [PageAnnouncementMain(), MainPage(), PageTVWallMain()];
