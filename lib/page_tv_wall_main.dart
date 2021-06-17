@@ -3,13 +3,52 @@ import 'package:http/http.dart' as http;
 import 'package:html/parser.dart' show parse;
 import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
 
-//import 'package:tcfsh_app/page_test.dart';
-//import 'package:flutter_linkify/flutter_linkify.dart';
-
 class ListItem {
   final String title;
   final String url;
   ListItem(this.title, this.url);
+}
+
+class Stastus {
+  final String status;
+  final bool dp;
+  final int statuscolor;
+  Stastus(this.status, this.dp, this.statuscolor);
+}
+
+class Statuswidget extends StatelessWidget {
+  final Stastus displaystatus;
+  Statuswidget(this.displaystatus);
+
+  @override
+  Widget build(BuildContext context) {
+    return new Offstage(
+        offstage: displaystatus.dp,
+        child: Row(children: [
+          SizedBox(
+            width: 5,
+          ),
+          Container(
+            //狀態：2
+            width: 38,
+            height: 18,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(3),
+              color: Color(displaystatus.statuscolor),
+            ),
+            alignment: Alignment.center,
+            child: Text(
+              displaystatus.status,
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 12,
+                fontFamily: "Noto Sans CJK TC",
+                fontWeight: FontWeight.w500,
+              ),
+            ),
+          ),
+        ]));
+  }
 }
 
 class ListitemWidget extends StatelessWidget {
@@ -22,7 +61,7 @@ class ListitemWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new SizedBox(
-      width: 305,
+      //width: 305,
       height: 25,
       child: new Text(
         listItem.title,
@@ -40,26 +79,8 @@ class ListitemWidget extends StatelessWidget {
 class Listitemlink extends StatelessWidget {
   final String listitemlink;
   final String title;
-
-  //String webpagetext;
   Listitemlink({Key key, @required this.listitemlink, this.title})
       : super(key: key);
-  /*void getWebpagetext() async {
-    var newurl = Uri.parse('$url');
-    var response = await http.get(newurl);
-    if (response.statusCode == 200) {
-      var res = parse(response.body);
-      var table = res.querySelector('article');
-      var announcement = table.children[1].children;
-      for (var ele in announcement) {
-        var anchor = ele.children[1].querySelector('div');
-        var webtext = anchor.text;
-        //webpagetext = webtext;
-        print(url);
-      }
-    }
-  }*/
-
   @override
   Widget build(BuildContext context) {
     return new WebviewScaffold(
@@ -91,6 +112,12 @@ class _PageTVWallMainState extends State<PageTVWallMain> {
   final List<ListItem> listdata = [];
   final List<ListItem> listdate = [];
   final List<ListItem> listurl = [];
+  List<dynamic> allstatus = [];
+  final List<Stastus> widgetstatus1 = [];
+  final List<Stastus> widgetstatus2 = [];
+  int yellow = 0xffe39900;
+  int red = 0xffcb333b;
+  //List<String> dpwidgetstatus;
   void getData() async {
     var url = Uri.parse('https://w2.tcfsh.ml/zh_tw/news/announcement');
     var response = await http.get(url);
@@ -104,6 +131,7 @@ class _PageTVWallMainState extends State<PageTVWallMain> {
         var anchor = ele.children[1].querySelector('a');
         var url = anchor.attributes['href'];
         var title = anchor.text;
+        allstatus.add(status);
         data.add(date);
         //data.add(anchor);
         data.add('https://w2.tcfsh.ml/$url');
@@ -116,7 +144,7 @@ class _PageTVWallMainState extends State<PageTVWallMain> {
         print(title);
         print('https://w2.tcfsh.ml/$url');
         print('\n');
-        print(status);
+        print(status.length);
       }
       for (int i = 0; i < data.length; i++) {
         if (i % 3 == 0) {
@@ -127,9 +155,33 @@ class _PageTVWallMainState extends State<PageTVWallMain> {
           listurl.add(ListItem('${data[i]}', '${data[i]}'));
         }
       }
+      for (int a = 0; a < allstatus.length; a++) {
+        if (allstatus[a].length == 7) {
+          widgetstatus1
+              .add(Stastus('${allstatus[a].substring(1, 3)}', false, red));
+          widgetstatus2
+              .add(Stastus('${allstatus[a].substring(4, 6)}', false, yellow));
+        } else if (allstatus[a].length == 0) {
+          widgetstatus1.add(Stastus('a', true, yellow));
+          widgetstatus2.add(Stastus('a', true, yellow));
+        } else {
+          if (allstatus[a].contains('重要') == true) {
+            widgetstatus1
+                .add(Stastus('${allstatus[a].substring(1, 3)}', false, red));
+            widgetstatus2.add(Stastus('a', true, yellow));
+          } else {
+            widgetstatus1
+                .add(Stastus('${allstatus[a].substring(1, 3)}', false, yellow));
+            widgetstatus2.add(Stastus('a', true, yellow));
+          }
+        }
+      }
     }
     setState(() {
       data = data;
+      allstatus = allstatus;
+      red = red;
+      yellow = yellow;
     });
   }
 
@@ -173,9 +225,8 @@ class _PageTVWallMainState extends State<PageTVWallMain> {
                             width: 23.9,
                           ),
                           ListitemWidget(listdate[index]),
-                          SizedBox(
-                            width: 2,
-                          ),
+                          Statuswidget(widgetstatus1[index]),
+                          Statuswidget(widgetstatus2[index])
                         ],
                       ),
                       Divider(
