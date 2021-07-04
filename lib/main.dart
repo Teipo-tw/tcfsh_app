@@ -4,6 +4,7 @@ import 'package:tcfsh_app/main_page.dart';
 import 'package:tcfsh_app/page_announcement_main.dart';
 import 'package:tcfsh_app/page_announcement.dart';
 import 'package:tcfsh_app/page_test.dart';
+import 'package:tcfsh_app/page_calendar.dart';
 
 void main() {
   runApp(MyApp());
@@ -96,6 +97,15 @@ class _MyHomePageState extends State<MyHomePage> {
               },
               child: Text("公告頁面"),
             ),
+            MaterialButton(
+                color: Colors.yellow[50],
+                child: Text("行事曆"),
+                textColor: Colors.blue,
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return GoogleCalendarEvents();
+                  }));
+                })
           ],
         ),
       ),

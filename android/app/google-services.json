@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "406804128779",
+    "project_id": "tcfshapp",
+    "storage_bucket": "tcfshapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:406804128779:android:7c98e304513cfba613130e",
+        "android_client_info": {
+          "package_name": "com.example.tcfsh_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "406804128779-708sh61mn1hmme4egcmu6ue6re4b7kec.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.tcfsh_app",
+            "certificate_hash": "04e3585e4d261137dfc8f90fc4cc3f09db1e03c3"
+          }
+        },
+        {
+          "client_id": "406804128779-iuck1d3r7lbt9m3nsdm65s8iev8s1ku1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDKfMtTMDos-KCAo74ijeLOWjIx6kw7sCU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "406804128779-iuck1d3r7lbt9m3nsdm65s8iev8s1ku1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

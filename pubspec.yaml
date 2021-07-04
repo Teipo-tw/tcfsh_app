@@ -23,7 +23,7 @@ environment:
 dependencies:
   html: ^0.14.0+4
 
-  flutter_webview_plugin: ^0.2.1+2
+  flutter_webview_plugin: ^0.4.0
 
   flutter_linkify: ^5.0.2
 
@@ -36,7 +36,14 @@ dependencies:
   
   http: ^0.13.1
   
-  flutter_custom_calendar: ^1.0.4+0.5
+  syncfusion_flutter_calendar: ^18.3.40
+
+  intl: ^0.16.0
+
+  google_sign_in: ^5.0.4
+  googleapis_auth: ^1.1.0
+  googleapis: ^3.0.0
+  
   
   
 
